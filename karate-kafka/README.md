@@ -2,7 +2,7 @@
 
 ## License
 ### Runtime License:
-To run Karate tests using this library, you need a license from Karate labs. You can email info@karatelabs.io and reuest a license.
+To run Karate tests using this library, you need a license from Karate labs. You can email info@karatelabs.io and request a license.
 
 ### Developer License
 To develop and run feature files from the IDE you need to upgrade to the paid versions of Karate Labs official plugins for [IntelliJ](https://plugins.jetbrains.com/plugin/19232-karate) or [VS Code](https://marketplace.visualstudio.com/items?itemName=karatelabs.karate).
