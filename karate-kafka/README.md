@@ -1,4 +1,15 @@
-# karate-kafka
+# Karate Kafka
+
+Karate Kafka adds first-class support for testing Kafka for both producing and consuming sides. Additional keywords make it easy to produce Kafka messages the same way you are used to making HTTP requests. The challenge of consuming messages in async fashion is solved via an elegant API.
+
+## Highlights
+* Unified syntax similar to HTTP but focused on Kafka
+* Flexibility to set up multiple async listeners
+* Support for parallel execution
+* Support for performance testing 
+* Express data and assertions as JSON
+* Avro or plain JSON serialization support
+* Use Avro schemas directly, no code-generation required
 
 ## License
 ### Runtime License:
@@ -14,14 +25,6 @@ The `karate.lic` file you receive should be placed in a `.karate` folder in your
  
 ## Sample Project
 You can find a sample project here: https://github.com/ptrthomas/karate-kafka-example
-
-## Highlights
-* Unified syntax similar to HTTP but focused on Kafka
-* Flexibility to set up multiple async listeners
-* Support for parallel execution
-* Support for performance testing 
-* Express data and assertions as JSON
-* Avro or plain JSON serialization support
 
 ## Syntax
 
@@ -107,7 +110,9 @@ Async handling requires a little more complexity than simple API tests, but kara
 
 Note how the syntax is future-proof, and support for `grpc` and `websockets` is coming soon.
 
-Typically you name the returned variable from `karate.consume()` as session. Now you can set properties before calling [`session.start()`](#sessionstart)
+Typically you name the returned variable from `karate.consume()` as session. Now you can set properties before calling [`session.start()`](#sessionstart).
+
+Behind the scenes a new Kafka consumer with a fresh group-id is created. Please provide feedback if you need a different model for your environment.
 
 ### `session.topic`
 Set the topic.
