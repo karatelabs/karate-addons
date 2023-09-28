@@ -71,7 +71,7 @@ Example:
 ```
 
 ### `value`
-When producing, set the Kafka message value.
+When producing, set the Kafka message value. If you specify a [`schema`](#schema) the JSON will be converted to Avro automatically.
 
 Example:
 
