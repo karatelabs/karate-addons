@@ -24,7 +24,7 @@ You need a Maven or Gradle project. The dependency info can be found here: https
 The `karate.lic` file you receive should be placed in a `.karate` folder in your project root. You can also change the default path where the license is expected - by setting a `KARATE_LICENSE_PATH` environment property.
  
 ## Sample Project
-You can find a sample project here: https://github.com/ptrthomas/karate-kafka-example
+You can find a sample project here: [Karate Kafka Example](https://github.com/karatelabs/karate-examples/blob/main/kafka/README.md)
 
 ## Syntax
 
