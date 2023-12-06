@@ -31,7 +31,18 @@ You can find a sample project here: [Karate Kafka Example](https://github.com/ka
 Note that [variables](https://github.com/karatelabs/karate#native-data-types) and JSON [embedded expressions](https://github.com/karatelabs/karate#embedded-expressions) will work just like you expect in Karate.
 
 ### `configure kafka`
-Any valid Kafka configuration can be set this way.
+Any valid Kafka configuration can be set this way. For example:
+
+```cucumber
+* configure kafka =
+"""
+{ 
+  'bootstrap.servers': 'localhost:29092',
+}
+"""
+```
+
+For an example of configuring MTLS / SSL, refer: [kafka-mtls-example](https://github.com/karatelabs/karate-examples/blob/main/kafka-mtls/README.md).
 
 ### `register`
 Set up mappings from JSON to Avro if needed. For example:
