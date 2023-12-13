@@ -11,6 +11,9 @@ Karate Kafka adds first-class support for testing Kafka for both producing and c
 * Avro or plain JSON serialization support
 * Use Avro schemas directly, no code-generation required
 
+## Launch Webinar
+* Includes an explanation and demo, you can watch it [on YouTube](https://youtu.be/xapqNmZoolE?si=UGKB3RnYnzoi9g1H).
+
 ## License
 ### Runtime License:
 To run Karate tests using this library, you need a license from Karate labs. You can email info@karatelabs.io and request a license.
