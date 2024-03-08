@@ -22,7 +22,7 @@ To run Karate tests using this library, you need a license from Karate labs. You
 To develop and run feature files from the IDE you need to upgrade to the paid versions of Karate Labs official plugins for [IntelliJ](https://plugins.jetbrains.com/plugin/19232-karate) or [VS Code](https://marketplace.visualstudio.com/items?itemName=karatelabs.karate).
 
 ## Setup
-You need a Maven or Gradle project. The dependency info can be found here: https://central.sonatype.com/artifact/io.karatelabs/karate-kafka
+You need a Maven or Gradle project. Please use the latest available version. The dependency info can be found here: https://central.sonatype.com/artifact/io.karatelabs/karate-kafka
 
 The `karate.lic` file you receive should be placed in a `.karate` folder in your project root. You can also change the default path where the license is expected - by setting a `KARATE_LICENSE_PATH` environment property.
  
