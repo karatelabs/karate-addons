@@ -9,7 +9,8 @@ Karate Kafka adds first-class support for testing Kafka for both producing and c
 * Support for performance testing 
 * Express data and assertions as JSON
 * Avro or plain JSON serialization support
-* Use Avro schemas directly, no code-generation required
+* Use Avro or Protobuf schemas directly, no code-generation required
+* Kafka schema registry is optional, use schemas directly from files
 
 ## Launch Webinar
 * Includes an explanation and demo, you can watch it [on YouTube](https://youtu.be/xapqNmZoolE?si=UGKB3RnYnzoi9g1H).
@@ -48,13 +49,19 @@ Any valid Kafka configuration can be set this way. For example:
 For an example of configuring MTLS / SSL, refer: [kafka-mtls-example](https://github.com/karatelabs/karate-examples/blob/main/kafka-mtls/README.md).
 
 ### `register`
-Set up mappings from JSON to Avro if needed. For example:
+Set up mappings from JSON to Avro or Protobuf if needed. For example:
 
 ```cucumber
 * register { name: 'hello', path: 'classpath:karate/hello.avsc' }
 ```
 
 The name you give here can be referenced later in [`session.schema`](#sessionschema) and the `schema` keyword.
+
+For Protobuf, you need to also specify the message name as a `*.proto` file can have multiple definitions.
+
+```cucumber
+* register { name: 'hello-proto', path: 'classpath:karate/hello.proto', message: 'Hello' }
+```
 
 ### `schema`
 When producing, refer to a previously [registered](#register) schema.
