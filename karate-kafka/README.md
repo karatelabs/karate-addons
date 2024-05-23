@@ -8,7 +8,7 @@ Karate Kafka adds first-class support for testing Kafka for both producing and c
 * Support for parallel execution
 * Support for performance testing 
 * Express data and assertions as JSON
-* Avro or plain JSON serialization support
+* Avro, Protobuf or plain JSON serialization support
 * Use Avro or Protobuf schemas directly, no code-generation required
 * Kafka schema registry is optional, use schemas directly from files
 
