@@ -1,16 +1,18 @@
-# Karate Kafka
+# Karate-Kafka
 
-Karate Kafka adds first-class support for testing Kafka for both producing and consuming sides. Additional keywords make it easy to produce Kafka messages the same way you are used to making HTTP requests. The challenge of consuming messages in async fashion is solved via an elegant API.
+Karate-Kafka adds first-class support for testing Kafka for both producing and consuming sides. Additional keywords make it easy to produce Kafka messages the same way you are used to making HTTP requests. The challenge of consuming messages in async fashion is solved via an elegant API.
 
 ## Highlights
 * Unified syntax similar to HTTP but focused on Kafka
 * Flexibility to set up multiple async listeners
+* Mix HTTP and Kafka calls within the same test flow
 * Support for parallel execution
 * Support for performance testing 
-* Express data and assertions as JSON
+* Express data as JSON and leverage Karate's powerful assertions
 * Avro, Protobuf or plain JSON serialization support
 * Use Avro or Protobuf schemas directly, no code-generation required
 * Kafka schema registry is optional, use schemas directly from files
+* Support for SSL/TLS and using certificates for secure auth
 
 ## Launch Webinar
 * Includes an explanation and demo, you can watch it [on YouTube](https://youtu.be/xapqNmZoolE?si=UGKB3RnYnzoi9g1H).
@@ -20,7 +22,7 @@ Karate Kafka adds first-class support for testing Kafka for both producing and c
 To run Karate tests using this library, you need a license from Karate labs. You can email info@karatelabs.io and request a license.
 
 ### Developer License
-To develop and run feature files from the IDE you need to upgrade to the paid versions of Karate Labs official plugins for [IntelliJ](https://plugins.jetbrains.com/plugin/19232-karate) or [VS Code](https://marketplace.visualstudio.com/items?itemName=karatelabs.karate).
+To develop and run feature files from the IDE you need to upgrade to the paid versions of Karate Labs official plugins for [IntelliJ](https://github.com/karatelabs/intellij-plugin) or [VS Code](https://github.com/karatelabs/vscode-extension).
 
 ## Setup
 You need a Maven or Gradle project. Please use the latest available version. The dependency info can be found here: https://central.sonatype.com/artifact/io.karatelabs/karate-kafka
