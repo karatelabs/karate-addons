@@ -1,6 +1,7 @@
 # Karate-Websocket
 
-> [!NOTE] Not Yet Released
+> [!NOTE] 
+> Not Yet Released
 
 Karate-Websocket adds first-class support for testing communication over the [Websocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API). The challenge of sending and consuming messages in async fashion is solved via an elegant API.
 
