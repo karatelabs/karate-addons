@@ -30,10 +30,6 @@ You can find a sample project here: [Karate gRPC Example](https://github.com/kar
 
 ## Syntax
 
-Note that [variables](https://github.com/karatelabs/karate#native-data-types) will work just like you expect in Karate. The syntax leans more towards "pure JS" than Karate's HTTP keywords.
-
-This means that within JSON, variables will work directly without needing to use the `'#(variableName)'` syntax for [embedded expressions](https://github.com/karatelabs/karate#embedded-expressions) that you may be used to.
-
 ### `karate.consume()`
 
 Async handling requires a little more complexity than simple API tests, but `karate-grpc` still keeps it simple. Here is an example:
@@ -56,6 +52,12 @@ Note how the syntax is future-proof, and support for other async protocols such 
 Typically you name the returned variable from `karate.consume()` as session. Now you can set properties before calling [`session.start()`](#sessionstart) or [`session.send()`](#sessionsend).
 
 Note how all the connection and service / method parameters can be set on the session before starting to send and receive messages.
+
+## Variables
+
+Note that [variables](https://github.com/karatelabs/karate#native-data-types) defined using `def` or in [`karate-config.js`](https://github.com/karatelabs/karate#karate-configjs) will work just like you expect in Karate. The syntax leans more towards "pure JS" than Karate's HTTP keywords.
+
+> This means that within JSON, variables will work directly without needing to use the `'#(variableName)'` syntax for [embedded expressions](https://github.com/karatelabs/karate#embedded-expressions) that you may be used to.
 
 ## Config
 
