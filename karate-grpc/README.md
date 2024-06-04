@@ -5,6 +5,7 @@ Karate-gRPC adds first-class support for testing [gRPC](https://grpc.io/). The c
 ## Highlights
 * Unified syntax similar to HTTP but focused on gRPC
 * Mix HTTP and gRPC calls within the same test flow
+* Support for all gRPC modes: Unary, Server Streaming, Client Streaming and Bidirectional
 * Set up multiple async connections if needed
 * Support for parallel execution
 * Support for performance testing
@@ -73,7 +74,7 @@ The properties that you can set on the object returned by [`karate.consume()`](#
 | method    | gRPC method name  |
 | count     | (defaults to 1) the number of response messages to wait for before the [`collect()`](#sessioncollect) or [`pop()`](#sessionpop) method returns, see [example](#sessioncount) |
 | filter    | (optional) A JS function, see [example](#sessionfilter) |
-| stream    | (defaults to `false`) Enable client-side streaming, so you have to call [`flush()`](#sessionflush) after `[send()](#sessionsend) |
+| stream    | (defaults to `false`) Enable client-side streaming, so you have to call [`flush()`](#sessionflush) after [send()](#sessionsend) |
 | trustCert | (optional) Trusted authority certificate, see [TLS](#tls) |
 | clientCert | (optional) Client certificate for "mutual auth", see [TLS](#tls) |
 | clientKey | (optional) Client key for "mutual auth", see [TLS](#tls) |
@@ -103,7 +104,7 @@ And `session.config` can be called multiple times within a test flow, and you ca
 
 ## Methods
 
-For actions such as sending messages or "collecting" async responses, you call methods on the session object. Since these are JS method invokations, they use round brackets and may take method arguments.
+For actions such as sending messages or "collecting" async responses, you call methods on the session object. Since these are JS method invocations, they use round brackets and may take method arguments.
 
 ### `session.send()`
 
@@ -117,6 +118,15 @@ Once you have a session and have set connection parameters, you can start sendin
 Although there is technically a `session.start()` method behind the scenes, it is automatically called behind the scenes for the first message sent, for convenience.
 
 Refer to the [example](https://github.com/karatelabs/karate-examples/blob/main/grpc/src/test/java/karate/hello.feature) for a working demo.
+
+Conversations are easy, you can continue to `send()` and `collect()` as long as needed:
+
+```cucumber
+    * session.send({ name: 'John' })
+    * match session.pop() == { message: 'hello John' }
+    * session.send({ name: 'Smith' })
+    * match session.pop() == { message: 'hello Smith' }
+```
 
 ### `session.collect()`
 
