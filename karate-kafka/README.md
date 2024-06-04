@@ -123,7 +123,7 @@ You can also use the multi-line "docstring" syntax.
 ```
 
 ### `karate.consume()`
-Async handling requires a little more complexity than simple API tests, but karate-kafka still keeps it simple. Here is an example:
+Async handling requires a little more complexity than simple API tests, but `karate-kafka` still keeps it simple. Here is an example:
 
 ```cucumber
 * def session = karate.consume('kafka')
@@ -131,7 +131,7 @@ Async handling requires a little more complexity than simple API tests, but kara
 * session.start()
 ```
 
-Note how the syntax is future-proof, and support for `grpc` and `websockets` is coming soon.
+Note how the syntax is future-proof, and support for other async protocols such as [`grpc`](../karate-grpc/README.md) and [`websocket`](../karate-websocket/README.md) is very similar.
 
 Typically you name the returned variable from `karate.consume()` as session. Now you can set properties before calling [`session.start()`](#sessionstart).
 
