@@ -14,6 +14,8 @@ Karate-gRPC adds first-class support for testing [gRPC](https://grpc.io/). The c
 * Automatic Protobuf to JSON conversion
 * Support for SSL/TLS and using certificates for secure auth
 
+<img src="https://github.com/karatelabs/karate-addons/assets/915480/b3ffac34-05a4-4711-a51c-db0745c65e99" height="550px"/>
+
 ## License
 ### Runtime License:
 To run Karate tests using this library, you need a license from Karate labs. You can email info@karatelabs.io and request a license.
