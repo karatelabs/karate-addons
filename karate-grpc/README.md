@@ -50,7 +50,7 @@ Async handling requires a little more complexity than simple API tests, but `kar
     * match session.pop() == { message: 'hello John' }
 ```
 
-Note how the syntax is future-proof, and support for other async protocols such as [`grpc`](../karate-grpc/README.md) and [`websocket`](../karate-websocket/README.md) is very similar.
+Note how the syntax is future-proof, and support for other async protocols such as [`kafka`](../karate-kafka/README.md) and [`websocket`](../karate-websocket/README.md) is very similar.
 
 Typically you name the returned variable from `karate.consume()` as session. Now you can set properties before calling [`session.start()`](#sessionstart) or [`session.send()`](#sessionsend).
 
