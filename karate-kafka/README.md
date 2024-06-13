@@ -65,6 +65,12 @@ For Protobuf, you need to also specify the message name as a `*.proto` file can 
 * register { name: 'hello-proto', path: 'classpath:karate/hello.proto', message: 'Hello' }
 ```
 
+If your protobuf files import other files, you can specify "search roots" as follows:
+
+```cucumber
+* register { name: 'hello-proto', path: 'classpath:karate/hello.proto', message: 'Hello', roots: ['classpath:karate'] }
+```
+
 ### `schema`
 When producing, refer to a previously [registered](#register) schema.
 
