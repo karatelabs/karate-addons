@@ -130,9 +130,13 @@ Note how `client.receive()` is called to pass the final message to the "Karate s
 
 Implementation of the [STOMP](https://stomp.github.io) protocol is available in the example project: [`StompAdapter.java`](https://github.com/karatelabs/karate-examples/blob/main/websocket/src/test/java/karate/StompAdapter.java).
 
-With a proper Adapter in place, a test becomes very simple and readable: [`stomp.feature`](https://github.com/karatelabs/karate-examples/blob/main/websocket/src/test/java/karate/stomp.feature). Note how a re-usable JavaScript function is used to abstract out the request-response flow into a "one-liner"
+With a proper Adapter in place, a test becomes very simple and readable: [`stomp.feature`](https://github.com/karatelabs/karate-examples/blob/main/websocket/src/test/java/karate/stomp.feature).
+
+Observe how a re-usable JavaScript function called `result()` is used to abstract out the request-response flow into a "one-liner, so the *real* business flow ends up being the following two lines:
 
 ```cucumber
     * match result('foo') == 'Hello, foo!'
     * match result('bar') == 'Hello, bar!'
 ```
+
+Details on how to run the full example (and the websocket server to test) are available here: [Karate Websocket example](https://github.com/karatelabs/karate-examples/blob/main/websocket/README.md).
