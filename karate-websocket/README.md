@@ -36,24 +36,47 @@ Websockets is somewhat "low level" and most real-world usage layers a high-level
 
 Note that [variables](https://github.com/karatelabs/karate#native-data-types) and JSON [embedded expressions](https://github.com/karatelabs/karate#embedded-expressions) will work just like you expect in Karate.
 
-### `karate.channel()`
+
 Async handling requires a little more complexity than simple API tests, but `karate-websocket` still keeps it simple. Here is an example:
 
 ```cucumber
     * def session = karate.channel('websocket')
     * session.url = 'wss://ws.postman-echo.com/raw'
     * session.start()
+
     * session.send('hello')
+
+    * def response = session.collect()
+    * match response == ['hello']    
 ```
 
 Note how the syntax is future-proof, and support for other async protocols such as [`grpc`](../karate-grpc/README.md) and [`kafka`](../karate-kafka/README.md) is very similar.
 
-Typically you name the returned variable from `karate.channel()` as session. Now you can set properties before calling [`session.start()`](#sessionstart).
+### `karate.channel()`
 
-Behind the scenes a new Websocket client is created.
+Typically you name the returned variable from `karate.channel()` as `session`. Now you can set properties before calling [`session.start()`](#sessionstart).
+
+Behind the scenes a new Websocket client is created when `session.start()` is called.
+
+### `session.url`
+
+This is to set the URL that would start with `ws://` or `wss://`.
+
+### `session.headers`
+
+You can set custom headers at any time before or during a "flow" of messages.
+
+```cucumber
+    * def session = karate.channel('websocket')
+    * session.url = 'wss://ws.postman-echo.com/raw'
+    * session.headers = { myHeaderName: 'myHeaderValue' }
+```
 
 ### `session.start()`
 You have to call this to start the listener process. To complete the test flow, you have to call [`session.collect()`](#sessioncollect)
+
+### `session.send()`
+This is how to send messages from the client. If you need conversion of what you pass as the argument, refer to how to write an [adapter](#adapter).
 
 ### `session.collect()`
 Since Websocket and async listeners can span or "collect" multiple messages, this is always an array of messages. The format of each individual message depends on the wire-format or any [adapter](#adapter) you have configured. Also see [`session.pop()`](#sessionpop)

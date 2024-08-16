@@ -139,7 +139,7 @@ Async handling requires a little more complexity than simple API tests, but `kar
 
 Note how the syntax is future-proof, and support for other async protocols such as [`grpc`](../karate-grpc/README.md) and [`websocket`](../karate-websocket/README.md) is very similar.
 
-Typically you name the returned variable from `karate.consume()` as session. Now you can set properties before calling [`session.start()`](#sessionstart).
+Typically you name the returned variable from `karate.consume()` as `session`. Now you can set properties before calling [`session.start()`](#sessionstart).
 
 Behind the scenes a new Kafka consumer with a fresh group-id is created. Please provide feedback if you need a different model for your environment.
 
