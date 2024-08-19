@@ -13,6 +13,8 @@ Karate-Websocket adds first-class support for testing communication over the [We
 * Automatic conversion from JSON to your custom wire-format
 * Support for SSL/TLS and using certificates for secure auth
 
+<img src="https://github.com/user-attachments/assets/693cc61d-9c3d-44cc-914a-7eb06f00b30b" height="500px"/>
+
 ## License
 ### Runtime License:
 To run Karate tests using this library, you need a license from Karate labs. You can email info@karatelabs.io and request a license.
