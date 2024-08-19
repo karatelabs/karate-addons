@@ -1,6 +1,11 @@
 # Karate-Websocket
 
-Karate-Websocket adds first-class support for testing communication over the [Websocket API](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API). The challenge of sending and consuming messages in async fashion is solved via an elegant API.
+This adds first-class support for testing [Websocket](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API). The challenge of sending and consuming messages in async fashion is solved via an elegant API.
+
+Websocket is very low level and typically layered under a protocol such as [STOMP](https://stomp.github.io/) or a custom JSON message schema.
+
+Karate's Websocket support makes it easy to plug-in wire-format conversion and flow-control. This means that you can easily test chat-bots or conversational user interfaces.
+
 
 ## Highlights
 * Unified syntax similar to HTTP but focused on Websocket
@@ -9,8 +14,8 @@ Karate-Websocket adds first-class support for testing communication over the [We
 * Support for parallel execution
 * Support for performance testing
 * Express data as JSON and leverage Karate's powerful assertions
-* Easy to define custom message types and sequence handling
-* Automatic conversion from JSON to your custom wire-format
+* Easy to define custom message types and conversational flow
+* Automatic conversion between JSON and your custom wire-format
 * Support for SSL/TLS and using certificates for secure auth
 
 <img src="https://github.com/user-attachments/assets/693cc61d-9c3d-44cc-914a-7eb06f00b30b" height="500px"/>
@@ -34,7 +39,7 @@ You can find a sample project here: [Karate Websocket Example](https://github.co
 
 The syntax is designed to give you full control over sending and receiving async messages.
 
-Websockets is somewhat "low level" and most real-world usage layers a high-level protocol such as [STOMP](https://stomp.github.io/) or a custom JSON schema. Karate's enterprise Websocket support makes it easy to handle message conversions and hanshake flows using a simple and flexible [adapter](#adapter) approach.
+Websockets is somewhat "low level" and most real-world usage layers a high-level protocol such as [STOMP](https://stomp.github.io/) or a custom JSON schema. Karate's enterprise Websocket support makes it easy to handle message conversions and handshake flows using a simple and flexible [adapter](#adapter) approach.
 
 Note that [variables](https://github.com/karatelabs/karate#native-data-types) and JSON [embedded expressions](https://github.com/karatelabs/karate#embedded-expressions) will work just like you expect in Karate.
 
