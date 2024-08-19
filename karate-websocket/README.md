@@ -153,6 +153,8 @@ public class JsonAdapter implements WebsocketAdapter<Map<String, Object>, String
 
 Note how `client.receive()` is called to pass the final message to the "Karate side".
 
+For complex protocols, you can easily write a `switch-case` statement within `onMessage()` that looks at the message-data (e.g. the value of a `type` key) and even auto respond with a message by calling `client.send()`. You can maintain protocol "state" as part of the adapter implementation if needed.
+
 Implementation of the [STOMP](https://stomp.github.io) protocol is available in the example project: [`StompAdapter.java`](https://github.com/karatelabs/karate-examples/blob/main/websocket/src/test/java/karate/StompAdapter.java).
 
 With a proper Adapter in place, a test becomes very simple and readable: [`stomp.feature`](https://github.com/karatelabs/karate-examples/blob/main/websocket/src/test/java/karate/stomp.feature).
