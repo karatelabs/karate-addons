@@ -6,6 +6,6 @@ Data formats such as Avro and Protobuf are supported. This provides for a seamle
 
 * [Kafka](./karate-kafka/README.md)
 * [gRPC](./karate-grpc/README.md)
-* [Websocket](./karate-websocket/README.md) (Coming Soon)
+* [Websocket](./karate-websocket/README.md)
 * [Webhook](./karate-webhook/README.md) (Coming Soon)
 
