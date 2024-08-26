@@ -164,7 +164,7 @@ Implementation of the [STOMP](https://stomp.github.io) protocol is available in 
 
 With a proper Adapter in place, a test becomes very simple and readable: [`stomp.feature`](https://github.com/karatelabs/karate-examples/blob/main/websocket/src/test/java/karate/stomp.feature).
 
-Observe how a re-usable JavaScript function called `result()` is used to abstract out the request-response flow into a "one-liner, so the *real* business flow ends up being the following two lines:
+Observe how a re-usable JavaScript function called `result()` is used to abstract out the request-response flow into a *one-liner*, so the *real* business flow ends up being the following two lines:
 
 ```cucumber
     * match result('foo') == 'Hello, foo!'
