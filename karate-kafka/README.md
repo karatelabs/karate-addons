@@ -217,7 +217,6 @@ Scenario:
 * def channel = karate.channel('kafka')
 * def consumer = channel.consumer()
 * consumer.topic = 'test-topic'
-* consumer.count = 1
 * consumer.start()
 
 * def producer = channel.producer()
@@ -230,3 +229,10 @@ Scenario:
 * match response.key == 'first'
 * match response.value == { message: 'hello', info: { first: 1, second: true } }
 ```
+
+Refer to other complete examples:
+* Using Avro schema: [kafka.feature](https://github.com/karatelabs/karate-examples/blob/main/kafka/src/test/java/karate/kafka.feature)
+* Using plain JSON: [kafka-json.feature](https://github.com/karatelabs/karate-examples/blob/main/kafka/src/test/java/karate/kafka-json.feature)
+* Multiple Scenarios, large messages: [kafka-multi.feature](https://github.com/karatelabs/karate-examples/blob/main/kafka/src/test/java/karate/kafka-multi.feature)
+* Using protobuf: [kafka-proto.feature](https://github.com/karatelabs/karate-examples/blob/main/kafka/src/test/java/karate/kafka-proto.feature)
+* Using SSL / MTLS: [kafka-mtls.feature](https://github.com/karatelabs/karate-examples/blob/main/kafka-mtls/src/test/java/karate/kafka-json.feature)
