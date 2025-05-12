@@ -26,6 +26,9 @@ To develop and run feature files from the IDE you need to upgrade to the paid ve
 ## Setup
 You need a Maven or Gradle project. Please use the latest available version. The dependency info can be found here: https://central.sonatype.com/artifact/io.karatelabs/karate-grpc
 
+### Fat JAR
+For teams that don't want to use Maven, you can download a "[standalone](https://github.com/karatelabs/karate/wiki/Get-Started:-Other-Runtime-Options)" JAR file that includes all dependencies (karate-core and karate-grpc) from the [releases](https://github.com/karatelabs/karate-addons/releases). Note that the `classpath:` prefix may not work so you should use [`file:`](https://github.com/karatelabs/karate#path-prefixes) instead for pointing to *.proto files.
+
 The `karate.lic` file you receive should be placed in a `.karate` folder in your project root. You can also change the default path where the license is expected - by setting a `KARATE_LICENSE_PATH` environment property.
  
 ## Sample Project
@@ -70,7 +73,7 @@ The properties that you can set on the object returned by [`karate.channel()`](#
 | --------- | ----------------- |
 | host      | Host name         |
 | port      | Port number (string variable references also work for convenience) |
-| proto     | Relative / Prefixed path to `*.proto` file |
+| proto     | Relative / [Prefixed](https://github.com/karatelabs/karate#path-prefixes) path to `*.proto` file |
 | protoRoots | (optional) array of relative / prefixed paths which are the search "roots" for dependencies or proto files which are "imports"
 | service   | gRPC service name |
 | method    | gRPC method name  |
