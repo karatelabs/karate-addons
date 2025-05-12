@@ -33,12 +33,12 @@ You can find a sample project here: [Karate gRPC Example](https://github.com/kar
 
 ## Syntax
 
-### `karate.consume()`
+### `karate.channel()`
 
 Async handling requires a little more complexity than simple API tests, but `karate-grpc` still keeps it simple. Here is an example:
 
 ```cucumber
-    * def session = karate.consume('grpc')
+    * def session = karate.channel('grpc')
 
     * session.host = 'localhost'
     * session.port = 9555
@@ -52,7 +52,7 @@ Async handling requires a little more complexity than simple API tests, but `kar
 
 Note how the syntax is future-proof, and support for other async protocols such as [`kafka`](../karate-kafka/README.md) and [`websocket`](../karate-websocket/README.md) is very similar.
 
-Typically you name the returned variable from `karate.consume()` as session. Now you can set properties before calling [`session.start()`](#sessionstart) or [`session.send()`](#sessionsend).
+Typically you name the returned variable from `karate.channel()` as session. Now you can set properties before calling [`session.start()`](#sessionstart) or [`session.send()`](#sessionsend).
 
 Note how all the connection and service / method parameters can be set on the session before starting to send and receive messages.
 
@@ -64,7 +64,7 @@ Note that [variables](https://github.com/karatelabs/karate#native-data-types) de
 
 ## Config
 
-The properties that you can set on the object returned by [`karate.consume()`](#karateconsume) are as follows:
+The properties that you can set on the object returned by [`karate.channel()`](#karatechannel) are as follows:
 
 | Name      | Description       |
 | --------- | ----------------- |
@@ -87,7 +87,7 @@ For convenience, it is possible to set multiple properties on the session in one
 So instead of:
 
 ```cucumber
-    * def session = karate.consume('grpc')
+    * def session = karate.channel('grpc')
 
     * session.host = 'localhost'
     * session.port = 9555
@@ -97,7 +97,7 @@ So instead of:
 You can do:
 
 ```cucumber
-    * def session = karate.consume('grpc')
+    * def session = karate.channel('grpc')
 
     * session.config = { host: 'localhost', port: 9555, proto: 'classpath:karate/hello.proto' }
 ```
