@@ -78,6 +78,7 @@ The properties that you can set on the object returned by [`karate.channel()`](#
 | protoRoots | (optional) array of relative / prefixed paths which are the search "roots" for dependencies or proto files which are "imports"
 | service   | gRPC service name |
 | method    | gRPC method name  |
+| metadata  | (optional) a JSON object of string key-value pairs, also see [`session.metadataResponse`](#sessionmetadata) |
 | count     | (defaults to 1) the number of response messages to wait for before the [`collect()`](#sessioncollect) or [`pop()`](#sessionpop) method returns, see [example](#sessioncount) |
 | filter    | (optional) A JS function, see [example](#sessionfilter) |
 | stream    | (defaults to `false`) Enable client-side streaming, so you have to call [`flush()`](#sessionflush) after [send()](#sessionsend) |
@@ -228,6 +229,18 @@ You can use JS functions and be very dynamic. For example:
 
 ```cucumber
     * session.filter = x => x.message != 'zero'
+```
+
+## `session.metadata`
+
+You can use Karate standard mechanisms for handling JSON and send gRPC metadata.
+Any incoming headers are captured in `session.metadataResponse` if you need it.
+
+```cucumber
+    * session.metadata = { authorization: 'secret' }
+    * session.send({ name: 'Smith' })
+    * match session.pop() == { message: 'hello Smith with authorization: secret' }
+    * match session.metadataResponse contains { 'authorization-response': 'secret-response' }
 ```
 
 ## TLS
