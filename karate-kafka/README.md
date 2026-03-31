@@ -195,7 +195,8 @@ If you have a multi-line JSON message value, you have to do it in two steps:
           "payloadChild": {"field1": "foo", "field2": "bar"}
       }
   }
-  producer.value = value
+  """
+  * producer.value = value
 ```
 
 ## Example

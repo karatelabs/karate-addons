@@ -175,7 +175,7 @@ This is set up by doing `session.stream = true` as shown below.
 
 ### `session.stream`
 
-The default is `false`, but when you want to simulate multiple messages sent by the client asynchonously - you can set `session.stream = true`.
+The default is `false`, but when you want to simulate multiple messages sent by the client asynchronously - you can set `session.stream = true`.
 
 This also means that you should call [`flush()`](#sessionflush) if you have to signal that the client is "done" or "complete". This is needed only in cases where the server waits for the client to "complete" before responding.
 
